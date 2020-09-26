@@ -1,4 +1,4 @@
-# ProxyFilter (Задание с https://www.weblancer.net)
+# ProxyFilter
 
 Имеются текстовые документы со списком прокси в виде (IP:PORT:LOGINPROXY:PASSPROXY) 
 и списком аккаунтов ВК в виде (LOGIN:PASS).
