@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProxyFilter
 {
     public partial class ProxyFilter : Form
     {
+        FileEditor fileEditor = new FileEditor();
         public ProxyFilter()
         {
             InitializeComponent();
@@ -30,6 +25,8 @@ namespace ProxyFilter
                 string TextFile = System.IO.File.ReadAllText(FileName);
                 tbProxyFile.Text = FileName;
                 lbProxy.ForeColor = Color.Green;
+                fileEditor.ProxyFile = fileEditor.ReadFile(FileName);
+                lbProxyCount.Text = "Proxy: " + fileEditor.ProxyFile.Length.ToString();
             }
             else
             {
@@ -37,7 +34,6 @@ namespace ProxyFilter
                 tbProxyFile.Text = "";
             }
         }
-
 
         private void butAccountsFile_Click(object sender, EventArgs e)
         {
@@ -50,37 +46,25 @@ namespace ProxyFilter
             {
                 string FileName = opf.FileName;
                 string TextFile = System.IO.File.ReadAllText(FileName);
-                tbProxyFile.Text = FileName;
-                lbProxy.ForeColor = Color.Green;
+                tbAccountsFile.Text = FileName;
+                lbAccounts.ForeColor = Color.Green;
+                fileEditor.AccountsFile = fileEditor.ReadFile(FileName);
+                lbAccCount.Text = "Accounts: " + fileEditor.AccountsFile.Length.ToString();
             }
             else
             {
-                lbProxy.ForeColor = Color.Red;
-                tbProxyFile.Text = "";
+                lbAccounts.ForeColor = Color.Red;
+                tbAccountsFile.Text = "";
             }
         }
 
         private void butStartConversion_Click(object sender, EventArgs e)
         {
-
+            fileEditor.Conversion();
         }
 
-        private void Conversion()
-        {
-            int k = 0;
-            //for (int i = 0; i < r; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
 
-                }
-            }
-        }
 
-        private void SaveIntoFile()
-        {
-
-        }
 
 
     }
