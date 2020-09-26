@@ -96,6 +96,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TestData\Accounts.txt" />
+    <Content Include="TestData\Proxy.txt" />
     <Content Include="Specification.txt" />
   </ItemGroup>
   <ItemGroup>
