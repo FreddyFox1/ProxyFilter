@@ -45,23 +45,6 @@ namespace ProxyFilter
             }
             SaveIntoFile(ResultData);
         }
-
-        //k = 0;
-        //for (int j = cIndex; j < AccountsFile.Length; j++)
-        //{
-
-        //    if (k < 3)
-        //    {
-        //            ResultData.Add((AccountsFile[j] + ":" + ProxyFile[i]).ToString());
-        //            k++;
-        //    }
-
-        //    else
-        //    {
-        //        cIndex = j;
-        //        break;
-        //    }
-
         private void SaveIntoFile(List<string> Data)
         {
             SaveFileDialog sfd = new SaveFileDialog()
